@@ -1,5 +1,5 @@
 function testGS() {
-    const url = "https://script.googleusercontent.com/macros/echo?user_content_key=QqWWVDdZ0Ao01JjylAgPgzkbt89w8Rie8NiGn3LkKgWhZe8iT4I82b6OHMz0IzH3ohyotFMYVXCD-rzGp7k_cSyUY2NmJgRjm5_BxDlH2jW0nuo2oDemN9CCS2h10ox_1xSncGQajx_ryfhECjZEnPQIfcmDu4ZJ-oPjvrlqJQoKwCham_CO7GcwIISIM-j1RQoZ-EcBJ2IK6Oz_X4FrrzH9fBJD03uIpthVcPNT1ynomXNG1cmBHg&lib=MybkFY4sr0YFF2hSIckwlIRmXCs-KDST4";
+    const url = "https://script.google.com/macros/s/AKfycbxjxVx0vR_C-4jQN8Md1LUK5x-RvxRpNNEf5pD_U4SaS1NhYBIJEiY3I4ATTPSMl2uw/exec";
 
     fetch(url)
         .then(data => data.json())
@@ -8,4 +8,23 @@ function testGS() {
         });
 }
 
+function addGS() {
+    const url = "https://script.google.com/macros/s/AKfycbxjxVx0vR_C-4jQN8Md1LUK5x-RvxRpNNEf5pD_U4SaS1NhYBIJEiY3I4ATTPSMl2uw/exec";
+
+    fetch(url, {
+        method: "POST", // *GET, POST, PUT, DELETE, etc. ***REQUIRED
+        mode: "no-cors", // no-cors, *cors, same-origin. ***REQUIRED
+        cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
+        // credentials: "omit", // include, *same-origin, omit
+        headers: {
+          "Content-Type": "application/json",
+          // 'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        redirect: "follow", // manual, *follow, error
+        // referrerPolicy: "no-referrer", // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
+        body: JSON.stringify({name:"Jeff"}), // body data type must match "Content-Type" header
+      });
+}
+
+document.querySelector("#button2").addEventListener("click", addGS);
 document.querySelector("#button").addEventListener("click", testGS);
