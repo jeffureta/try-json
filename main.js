@@ -22,7 +22,7 @@ function addGS() {
         },
         redirect: "follow", // manual, *follow, error
         // referrerPolicy: "no-referrer", // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
-        body: JSON.stringify({name:"Jeff"}), // body data type must match "Content-Type" header
+        body: JSON.stringify({"first name":"jeff", "last name":"ureta", "email address":"jeffvincentureta@gmail.com"}), // body data type must match "Content-Type" header
       });
 }
 
